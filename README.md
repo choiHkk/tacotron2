@@ -5,6 +5,7 @@
 5. mel-spectrogram 생성 과정이 변경되었기 때문에 data_utils.py 스크립트 일부가 수정되었습니다.
 6. 학습 시 사용되는 nvidia 기반 amp(automatic mixed precison)은 별도의 설치가 필요하기 때문에 사용하지 않습니다. train.py 스크립트 대부분이 수정되었습니다.
 7. tensorflow를 사용하지 않기 때문에 hparams.py 스크립트 대부분이 수정되었습니다.
+8. GPU, CUDA 종류에 따라 Dockerfile 상단 torch image 수정이 필요할 수도 있습니다.
 
 
 ## Dataset
