@@ -186,7 +186,7 @@ def train(gpu_nums, output_directory, log_directory, checkpoint_path,
                 save_checkpoint(model, optimizer, learning_rate, iteration,
                                 checkpoint_path)
 
-            # early stop training (excape from for loop)
+            # early stop training
             if (iteration == init_iteration+hparams.target_step):
                 checkpoint_path = os.path.join(
                     model_state_dir_name,
