@@ -106,19 +106,6 @@ import soundfile
 def load_wav(path, sr):
     return librosa.core.load(path, sr=sr)[0]
 
-def save_audio_to_wav(audio,
-                      file_name='test.wav',
-                      sampling_rate=32000):
-
-    soundfile.write(
-        file_name,
-        audio,
-        sampling_rate,
-        format='WAV',
-        endian='LITTLE',
-        subtype='PCM_16'
-    )
-
 def save_wav(wav, path, sr):
     wav *= 32767 / max(0.01, np.max(np.abs(wav)))
     #proposed by @dsmiller
