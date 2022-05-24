@@ -198,7 +198,7 @@ def train(gpu_nums, output_directory, log_directory, checkpoint_path,
 
             iteration += 1
 
-        # early stop training (excape from for loop)
+        # early stop training
         if (iteration == init_iteration+hparams.target_step):
             break
 
