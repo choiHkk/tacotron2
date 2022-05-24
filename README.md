@@ -12,10 +12,10 @@
 
 ## Dataset
 1. download dataset - https://www.kaggle.com/datasets/bryanpark/korean-single-speaker-speech-dataset
-2. mv /path/to/the/kss.zip /path/to/the/tacotron2/data/dataset
-3. mkdir /path/to/the/tacotron2/data/dataset
-4. cd /path/to/the/tacotron2/data/dataset
-5. unzip kss.zip -d kss
+2. `mv /path/to/the/kss.zip /path/to/the/tacotron2/data/dataset`
+3. `mkdir /path/to/the/tacotron2/data/dataset`
+4. `cd /path/to/the/tacotron2/data/dataset`
+5. `unzip kss.zip -d kss`
 
 ## Docker build
 1. cd /path/to/the/tacotron2
