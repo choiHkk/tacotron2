@@ -183,7 +183,7 @@ def train(gpu_nums, output_directory, log_directory, checkpoint_path,
                     model_state_dir_name,
                     f"checkpoint_{iteration}"
                 )
-                save_checkpoint(model, optimizer, learning_rate, iteration,
+                save_checkpoint(model, optimizer, cur_lr, iteration,
                                 checkpoint_path)
 
             # early stop training
@@ -192,7 +192,7 @@ def train(gpu_nums, output_directory, log_directory, checkpoint_path,
                     model_state_dir_name,
                     f"checkpoint_{iteration}"
                 )
-                save_checkpoint(model, optimizer, learning_rate, iteration,
+                save_checkpoint(model, optimizer, cur_lr, iteration,
                                 checkpoint_path)
                 break
 
