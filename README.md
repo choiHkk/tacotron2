@@ -5,8 +5,9 @@
 5. mel-spectrogram 생성 과정이 변경되었기 때문에 data_utils.py 스크립트 일부가 수정되었습니다.
 6. 학습 시 사용되는 nvidia 기반 amp(automatic mixed precison)은 별도의 설치가 필요하기 때문에 사용하지 않습니다. train.py 스크립트 대부분이 수정되었습니다.
 7. tensorflow를 사용하지 않기 때문에 hparams.py 스크립트 대부분이 수정되었습니다.
-8. GPU, CUDA 종류에 따라 Dockerfile 상단 torch image 수정이 필요할 수도 있습니다.
-9. 별도의 pre-processing 과정은 필요하지 않습니다.
+8. conda 기반으로 진행해도 무방하지만 본 레포지토리에서는 docker 환경만 제공합니다. 기본적으로 ubuntu에 docker, nvidia-docker가 설치되었다고 가정합니다.
+9. GPU, CUDA 종류에 따라 Dockerfile 상단 torch image 수정이 필요할 수도 있습니다.
+10. 별도의 pre-processing 과정은 필요하지 않습니다.
 
 
 ## Dataset
