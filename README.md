@@ -26,9 +26,9 @@
 2. cd /home/work/tacotron2
 3. `python train.py -g 0 -o data -l kss_v1 -d /home/work/tacotron2/data/dataset/kss`
 4. `python train.py -g 0 -o data -l kss_v1 -d /home/work/tacotron2/data/dataset/kss` -c /home/work/tacotron2/data/kss_v1/model_state/checkpoint_<step>
-  -g : gpu number
-  -o : output directory
-  -l : log directory
-  -d : data directory
-  -c : checkpoint path with step number
+  * -g : gpu number
+  * -o : output directory
+  * -l : log directory
+  * -d : data directory
+  * -c : checkpoint path with step number
 5. (OPTIONAL) `tensorboard --logdir=outdir/logdir`
