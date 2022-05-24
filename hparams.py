@@ -7,7 +7,7 @@ Hparams = easydict.EasyDict(
     ################################
     # Experiment Parameters        #
     ################################
-    target_step=50000,
+    target_step=300000,
     save_per_step=1000,
     seed=1234,
     dynamic_loss_scaling=True,
@@ -41,6 +41,17 @@ Hparams = easydict.EasyDict(
     n_mel_channels=80,
     mel_fmin=0.0,
     mel_fmax=8000.0,
+    
+    preemphasize=True,
+    preemphasis=0.97,
+    ref_level_db=20,
+    min_level_db=-100,
+    signal_normalization=True,
+    allow_clipping_in_normalization=True,
+    symmetric_mels=True,
+    use_lws=False,
+    frame_shift_ms=None,
+    max_abs_value=4.,
 
     ################################
     # Model Parameters             #

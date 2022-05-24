@@ -1,4 +1,5 @@
 import random
+import librosa
 import numpy as np
 import torch
 import torch.utils.data
@@ -7,6 +8,7 @@ import os
 import layers
 from utils import load_wav_to_torch, load_filepaths_and_text
 from text import text_to_sequence
+from audio_processing import melspectrogram
 
 
 class TextMelLoader(torch.utils.data.Dataset):
@@ -16,6 +18,7 @@ class TextMelLoader(torch.utils.data.Dataset):
         3) computes mel-spectrograms from audio files.
     """
     def __init__(self, audiopaths_and_text, hparams):
+        self.hparams = hparams
         self.data_path = hparams.data_path
         self.audiopaths_and_text = load_filepaths_and_text(audiopaths_and_text)
         # self.text_cleaners = hparams.text_cleaners
@@ -50,9 +53,11 @@ class TextMelLoader(torch.utils.data.Dataset):
                 raise ValueError("{} {} SR doesn't match target {} SR".format(
                     sampling_rate, self.stft.sampling_rate))
             audio_norm = audio / self.max_wav_value
+            audio_norm, _ = librosa.effects.trim(audio_norm, top_db=35, frame_length=6000, hop_length=200)
             audio_norm = audio_norm.unsqueeze(0)
             audio_norm = torch.autograd.Variable(audio_norm, requires_grad=False)
-            melspec = self.stft.mel_spectrogram(audio_norm)
+            # melspec = self.stft.mel_spectrogram(audio_norm)
+            melspec = torch.from_numpy(melspectrogram(audio_norm.squeeze(0), self.hparams))
             melspec = torch.squeeze(melspec, 0)
         else:
             melspec = torch.from_numpy(np.load(filename))
