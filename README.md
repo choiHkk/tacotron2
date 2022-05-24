@@ -4,6 +4,10 @@
 3. cd /path/to/the/tacotron2/data/dataset
 4. unzip kss.zip -d kss
 
+## Docker build
+1. cd /path/to/the/tacotron2
+2. docker build --tag tacotron2:latest .
+
 ## Training
 1. nvidia-docker run -it -n 'tacotron2' -v /path/to/tacotron2:/home/work/tacotron2 --ipc=host --privileged tacotron2:latest
 2. cd /home/work/tacotron2
