@@ -22,7 +22,7 @@
 2. `docker build --tag tacotron2:latest .`
 
 ## Training
-1. `nvidia-docker run -it -n 'tacotron2' -v /path/to/tacotron2:/home/work/tacotron2 --ipc=host --privileged tacotron2:latest`
+1. `nvidia-docker run -it --name 'tacotron2' -v /path/to/tacotron2:/home/work/tacotron2 --ipc=host --privileged tacotron2:latest`
 2. `cd /home/work/tacotron2`
 3. `python train.py -g 0 -o data -l kss_v1 -d /home/work/tacotron2/data/dataset/kss`
 4. `python train.py -g 0 -o data -l kss_v1 -d /home/work/tacotron2/data/dataset/kss -c /home/work/tacotron2/data/kss_v1/model_state/checkpoint_<step>`
